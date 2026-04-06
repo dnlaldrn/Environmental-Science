@@ -66,9 +66,9 @@
         </div>
       </div>
 
-      <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl group">
+      <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl ">
         <img
-          class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+          class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
           src="f3.png"
           alt="Figure 3"
         />
@@ -321,6 +321,8 @@
                     controls
                   ></video>
                 }
+                
+                
              
         </div>
         <p
@@ -331,6 +333,93 @@
           differences around the world.
         </p>
       </div>
-    </div>
+      <p class="text-slate-300 text-lg leading-relaxed mt-6">
+        Quiz Time
+      </p>
+      <p>It is the state of the atmosphere at a particular place at a particular moment.</p>
+      
+      <div class="flex justify-evenly w-full mb-1">
+  <button 
+    (click)="chooseAnswer('Weather')"
+    [ngClass]="{
+      'bg-green-500 text-white': selectedAnswer === 'Weather'
+    }" class="border border-white px-2 py-1 rounded-2xl">
+    Weather
+  </button>
+
+  <button 
+   class="border border-white px-2 py-1 rounded-2xl"
+    (click)="chooseAnswer('Climate')"
+    [ngClass]="{
+      'bg-red-500 text-white': selectedAnswer === 'Climate'
+    }">
+    Climate
+  </button>
+
+  <button 
+   class="border border-white px-2 py-1 rounded-2xl"
+    (click)="chooseAnswer('Cyclone')"
+    [ngClass]="{
+      'bg-red-500 text-white': selectedAnswer === 'Cyclone'
+    }">
+    Cyclone
+  </button>
+</div>
+       
+       <p>It is the distance from the equator measured in degrees north or south.</p>
+       <div class="flex justify-evenly w-full ">
+        <button  class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('Longhitude')" [ngClass]="{
+  'bg-red-500 text-white':  selectedAnswer === 'Longhitude'
+}">Longhitude</button>
+         <button   class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('Attitude')"  [ngClass]="{
+
+  'bg-red-500 text-white':  selectedAnswer == 'Attitude'
+  
+}">Attitude</button>
+          <button  class="border border-white px-2 py-1 rounded-2xl"  (click)="chooseAnswer('Latitude')"  [ngClass]="{
+  'bg-green-500 text-white': selectedAnswer === 'Latitude',
+
+}">Latitude</button>
+     
+       </div>
+       <p>A periodic, short-term (6- to 18-month) shift in the location of warm and cold water masses across the Pacific Ocean.</p>
+    <div class="flex justify-evenly w-full ">
+        <button  class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('El Nino Cycle')" [ngClass]="{
+  'bg-red-500 text-white':  selectedAnswer === 'El Nino Cycle'
+}">El Nino Cycle</button>
+         <button   class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('La NIna Cycle')"  [ngClass]="{
+
+  'bg-red-500 text-white':  selectedAnswer == 'La NIna Cycle'
+  
+}">La NIna Cycle</button>
+          <button  class="border border-white px-2 py-1 rounded-2xl"  (click)="chooseAnswer('The ENSO Cycle')"  [ngClass]="{
+  'bg-green-500 text-white': selectedAnswer === 'The ENSO Cycle',
+
+}">The ENSO Cycle</button>
+    
+    
+       </div>
+       <p>
+        A long-term shift—lasting 20 to 30 years—in the location of warm and cold water masses in the Pacific Ocean.
+       </p>
+       <div class="flex justify-evenly w-full ">
+        <button  class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('Wind Cycle')" [ngClass]="{
+  'bg-red-500 text-white':  selectedAnswer === 'Wind Cycle'
+}">Wind Cycle</button>
+         <button   class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('The PDO Cycle')"  [ngClass]="{
+
+  'bg-green-500 text-white': selectedAnswer === 'The PDO Cycle'
+  
+}">The PDO Cycle</button>
+          <button  class="border border-white px-2 py-1 rounded-2xl"  (click)="chooseAnswer('The Pacific Cycle')"  [ngClass]="{
+'bg-red-500 text-white':  selectedAnswer === 'The Pacific Cycle'
+
+}">The Pacific Cycle</button>
+    
+    
+       </div>
+      </div>
+
+   
   </div>
 </section>

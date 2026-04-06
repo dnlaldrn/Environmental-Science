@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
-interface Quizitems {
-  question: string;
-  choices: string[];
-  answer:string,
-}
+
 
 @Component({
   selector: 'app-climate-component',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,CommonModule],
   templateUrl: './climate-component.html',
   styleUrls: ['./climate-component.css'],
 })
@@ -26,17 +23,11 @@ export class ClimateComponent {
   playVideo2() {
     this.isVideo2playing = !this.isVideo2playing;
   }
+ selectedAnswer: string = '';
 
-  quizItems: Quizitems[] = [
-    {
-      question: 'It is the state of the atmosphere at a particular place at a particular moment',
-      choices: [
-        'Weather',
-        'Climate',
-        'Temperature',
-        'Atmosphere'
-      ],
-      answer:"Weather",
-    }
-  ];
+chooseAnswer(answer: string) {
+  this.selectedAnswer = answer;
+  console.log(answer)
+}
+
 }
