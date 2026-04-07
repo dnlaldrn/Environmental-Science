@@ -66,7 +66,7 @@
         </div>
       </div>
 
-      <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl ">
+      <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
         <img
           class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
           src="f3.png"
@@ -208,17 +208,27 @@
         <div
           class="overflow-hidden rounded-2xl border border-white/10 shadow-xl flex justify-center relative group"
         >
-          <img
-            class="w-[50%] h-auto transform group-hover:scale-105 transition-transform duration-700 cursor-pointer"
-            src="f6.png"
-            alt="Figure 3"
-            (click)="playVideo1()"
-          />
+          <figure class="h-[300px]">
+            <img
+              class="w-full h-full transform group-hover:scale-105 transition-transform duration-700 cursor-pointer"
+              src="f6.png"
+              alt="Figure 3"
+            />
+            <div
+              class="absolute inset-0 bg-slate-950/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              <span
+                class="bg-cyan-500 text-white px-4 py-2 rounded-full font-bold shadow-lg"
+                (click)="playVideo1()"
+                >Play Video</span
+              >
+            </div>
+          </figure>
 
           @if (isVideo1playing) {
             <video
               src="elnino.mp4"
-              class="absolute inset-0 w-[70%] h-auto object-cover z-50 mx-auto"
+              class="absolute inset-0 w-full h-full object-cover z-50 mx-auto"
               autoplay
               controls
             ></video>
@@ -313,17 +323,15 @@
             src="f9.png"
             alt="Figure 4"
             (click)="playVideo2()"
-          /> @if (isVideo2playing) {
-                  <video
-                    src="seasonal.mp4"
-                    class="absolute inset-0 w-[70%] h-full object-cover z-50 mx-auto"
-                    autoplay
-                    controls
-                  ></video>
-                }
-                
-                
-             
+          />
+          @if (isVideo2playing) {
+            <video
+              src="seasonal.mp4"
+              class="absolute inset-0 w-[70%] h-full object-cover z-50 mx-auto"
+              autoplay
+              controls
+            ></video>
+          }
         </div>
         <p
           class="text-center text-sm text-slate-400 italic mt-6 px-6 max-w-2xl mx-auto leading-relaxed"
@@ -333,93 +341,137 @@
           differences around the world.
         </p>
       </div>
-      <p class="text-slate-300 text-lg leading-relaxed mt-6">
-        Quiz Time
-      </p>
+      <p class="text-slate-300 text-lg leading-relaxed mt-6">Quiz Time</p>
       <p>It is the state of the atmosphere at a particular place at a particular moment.</p>
-      
+
       <div class="flex justify-evenly w-full mb-1">
-  <button 
-    (click)="chooseAnswer('Weather')"
-    [ngClass]="{
-      'bg-green-500 text-white': selectedAnswer === 'Weather'
-    }" class="border border-white px-2 py-1 rounded-2xl">
-    Weather
-  </button>
+        <button
+          (click)="chooseAnswer('Weather')"
+          [ngClass]="{
+            'bg-green-500 text-white': selectedAnswer === 'Weather',
+          }"
+          class="border border-white px-2 py-1 rounded-2xl"
+        >
+          Weather
+        </button>
 
-  <button 
-   class="border border-white px-2 py-1 rounded-2xl"
-    (click)="chooseAnswer('Climate')"
-    [ngClass]="{
-      'bg-red-500 text-white': selectedAnswer === 'Climate'
-    }">
-    Climate
-  </button>
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('Climate')"
+          [ngClass]="{
+            'bg-red-500 text-white': selectedAnswer === 'Climate',
+          }"
+        >
+          Climate
+        </button>
 
-  <button 
-   class="border border-white px-2 py-1 rounded-2xl"
-    (click)="chooseAnswer('Cyclone')"
-    [ngClass]="{
-      'bg-red-500 text-white': selectedAnswer === 'Cyclone'
-    }">
-    Cyclone
-  </button>
-</div>
-       
-       <p>It is the distance from the equator measured in degrees north or south.</p>
-       <div class="flex justify-evenly w-full ">
-        <button  class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('Longhitude')" [ngClass]="{
-  'bg-red-500 text-white':  selectedAnswer === 'Longhitude'
-}">Longhitude</button>
-         <button   class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('Attitude')"  [ngClass]="{
-
-  'bg-red-500 text-white':  selectedAnswer == 'Attitude'
-  
-}">Attitude</button>
-          <button  class="border border-white px-2 py-1 rounded-2xl"  (click)="chooseAnswer('Latitude')"  [ngClass]="{
-  'bg-green-500 text-white': selectedAnswer === 'Latitude',
-
-}">Latitude</button>
-     
-       </div>
-       <p>A periodic, short-term (6- to 18-month) shift in the location of warm and cold water masses across the Pacific Ocean.</p>
-    <div class="flex justify-evenly w-full ">
-        <button  class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('El Nino Cycle')" [ngClass]="{
-  'bg-red-500 text-white':  selectedAnswer === 'El Nino Cycle'
-}">El Nino Cycle</button>
-         <button   class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('La NIna Cycle')"  [ngClass]="{
-
-  'bg-red-500 text-white':  selectedAnswer == 'La NIna Cycle'
-  
-}">La NIna Cycle</button>
-          <button  class="border border-white px-2 py-1 rounded-2xl"  (click)="chooseAnswer('The ENSO Cycle')"  [ngClass]="{
-  'bg-green-500 text-white': selectedAnswer === 'The ENSO Cycle',
-
-}">The ENSO Cycle</button>
-    
-    
-       </div>
-       <p>
-        A long-term shift—lasting 20 to 30 years—in the location of warm and cold water masses in the Pacific Ocean.
-       </p>
-       <div class="flex justify-evenly w-full ">
-        <button  class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('Wind Cycle')" [ngClass]="{
-  'bg-red-500 text-white':  selectedAnswer === 'Wind Cycle'
-}">Wind Cycle</button>
-         <button   class="border border-white px-2 py-1 rounded-2xl" (click)="chooseAnswer('The PDO Cycle')"  [ngClass]="{
-
-  'bg-green-500 text-white': selectedAnswer === 'The PDO Cycle'
-  
-}">The PDO Cycle</button>
-          <button  class="border border-white px-2 py-1 rounded-2xl"  (click)="chooseAnswer('The Pacific Cycle')"  [ngClass]="{
-'bg-red-500 text-white':  selectedAnswer === 'The Pacific Cycle'
-
-}">The Pacific Cycle</button>
-    
-    
-       </div>
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('Cyclone')"
+          [ngClass]="{
+            'bg-red-500 text-white': selectedAnswer === 'Cyclone',
+          }"
+        >
+          Cyclone
+        </button>
       </div>
 
-   
+      <p>It is the distance from the equator measured in degrees north or south.</p>
+      <div class="flex justify-evenly w-full">
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('Longhitude')"
+          [ngClass]="{
+            'bg-red-500 text-white': selectedAnswer === 'Longhitude',
+          }"
+        >
+          Longhitude
+        </button>
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('Attitude')"
+          [ngClass]="{
+            'bg-red-500 text-white': selectedAnswer == 'Attitude',
+          }"
+        >
+          Attitude
+        </button>
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('Latitude')"
+          [ngClass]="{
+            'bg-green-500 text-white': selectedAnswer === 'Latitude',
+          }"
+        >
+          Latitude
+        </button>
+      </div>
+      <p>
+        A periodic, short-term (6- to 18-month) shift in the location of warm and cold water masses
+        across the Pacific Ocean.
+      </p>
+      <div class="flex justify-evenly w-full">
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('El Nino Cycle')"
+          [ngClass]="{
+            'bg-red-500 text-white': selectedAnswer === 'El Nino Cycle',
+          }"
+        >
+          El Nino Cycle
+        </button>
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('La NIna Cycle')"
+          [ngClass]="{
+            'bg-red-500 text-white': selectedAnswer == 'La NIna Cycle',
+          }"
+        >
+          La NIna Cycle
+        </button>
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('The ENSO Cycle')"
+          [ngClass]="{
+            'bg-green-500 text-white': selectedAnswer === 'The ENSO Cycle',
+          }"
+        >
+          The ENSO Cycle
+        </button>
+      </div>
+      <p>
+        A long-term shift—lasting 20 to 30 years—in the location of warm and cold water masses in
+        the Pacific Ocean.
+      </p>
+      <div class="flex justify-evenly w-full">
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('Wind Cycle')"
+          [ngClass]="{
+            'bg-red-500 text-white': selectedAnswer === 'Wind Cycle',
+          }"
+        >
+          Wind Cycle
+        </button>
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('The PDO Cycle')"
+          [ngClass]="{
+            'bg-green-500 text-white': selectedAnswer === 'The PDO Cycle',
+          }"
+        >
+          The PDO Cycle
+        </button>
+        <button
+          class="border border-white px-2 py-1 rounded-2xl"
+          (click)="chooseAnswer('The Pacific Cycle')"
+          [ngClass]="{
+            'bg-red-500 text-white': selectedAnswer === 'The Pacific Cycle',
+          }"
+        >
+          The Pacific Cycle
+        </button>
+      </div>
+    </div>
   </div>
 </section>
