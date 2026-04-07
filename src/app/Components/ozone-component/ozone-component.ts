@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './ozone-component.html',
   styleUrl: './ozone-component.css',
 })
-export class OzoneComponent {}
+export class OzoneComponent {
+   play = false;
+
+  playVideo(){
+    this.play = !this.play;
+  }
+}
