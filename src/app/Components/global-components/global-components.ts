@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './global-components.html',
   styleUrl: './global-components.css',
 })
-export class GlobalComponents {}
+export class GlobalComponents {
+  isVideoPlaying = false;
+
+  playVideo(){
+    this.isVideoPlaying = !this.isVideoPlaying;
+    console.log(this.isVideoPlaying)
+  }
+}
